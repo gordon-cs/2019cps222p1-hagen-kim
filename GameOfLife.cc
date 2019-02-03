@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <vector>
-#include "gameOfLife.h"
+#include "GameOfLife.h"
 
 //#define NONE ' '
 //#define LIVING '*'
