@@ -106,7 +106,7 @@ cout << "+--------------------------------------------------+" << endl;
 
 // counts the living organisms
 
-GameOfLife :: action() {
+GameOfLife :: state() {
   for (int r = 0; r < activeRows; r++ )
   {
     for (int c = 0; c < activeCols; c++)
