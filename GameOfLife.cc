@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <vector>
+#include "gameOfLife.h"
 
 //#define NONE ' '
 //#define LIVING '*'
@@ -92,6 +93,7 @@ cout << "+--------------------------------------------------+" << endl;
   while (cin.get() != '\n'){
 
   }
+}
 
 /*for (int i = 0; i < x; i++) {
   cin >> row;
@@ -104,7 +106,7 @@ cout << "+--------------------------------------------------+" << endl;
 
 // counts the living organisms
 
-
+GameOfLife :: action() {
   for (int r = 0; r < activeRows; r++ )
   {
     for (int c = 0; c < activeCols; c++)
