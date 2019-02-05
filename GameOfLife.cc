@@ -3,12 +3,11 @@
 #include <vector>
 #include "GameOfLife.h"
 
-//#define NONE ' '
-//#define LIVING '*'
+
 using std::cout;
 using std::endl;
 
-using namespace std;
+using std::array;
 
 // definition of what each of the constants represent
 static const int activeRows = 18;
@@ -21,7 +20,7 @@ static const char ESC = 27;
 
 int main()
 {
-int x;
+int numberOfOrganisms;
 int row;
 int col;
 int gen;
@@ -36,10 +35,15 @@ int gen;
 */
 
 
-/*void displayboard();
-}
+class board {
+  public:
+  board();
+  board( const board& board);
+  ~board();
+  bool  
 
-void displayboard()
+
+/*void displayboard()
 {
   for(int r = 0; r < activeRows; r++)
   {
@@ -53,17 +57,27 @@ void displayboard()
 }*/
 
 
-enum Organism {NONE, LIVING};
-Organism _board[totalRows][totalCols];
+//enum Organism {NONE, LIVING};
+
 
 cout << "How many organisms initially? ";
-cin >> x;
+cin >> numberOfOrganisms;
 
 while (cin.get() != '\n') {   // intentionally empty loop body
 }
 
 cout << "Locations? ";
-cin >> x;
+for (int x = 0; x < totalRows; x++)
+{
+ for (int y = 0; y < totalCols; y++)
+ {
+   _board[x][y] == 0;
+ }
+cout << endl;
+return;
+}
+
+cin >> [x][y];
 
 while (cin.get() != '\n') {   // intentionally empty loop body
 }
