@@ -3,31 +3,13 @@
 #include <vector>
 #include "GameOfLife.h"
 
+
 using std::cout;
 using std::endl;
 
-using namespace std;
+using std::array;
+  
 
-
-int main()
-{
-int x;
-int row;
-int col;
-int gen;
-
-//Initializing the board
-private:
-  enum Organism _board[totalRows][totalCols];
-  for (int i = 0; i < activeRows; i++){
-        for (int j = 0; j < activeCols; j++) {
-                _board[i][j] = 0;
-  }
-}
-
-
-/*void displayboard();
-}
 
 void displayboard()
 {
@@ -35,25 +17,35 @@ void displayboard()
   {
     for(int c = 0; c < activeCols; c++)
     {
-      board[r][c]==0;
+      switch(board[r][c]){
+      case LIVING:        cout << '*'; break;
+      case NONE:          cout << ' '; break;
     }
+
   }
   cout << endl;
   return;
-}*/
+}
 
-
-enum Organism { NONE, GESTATING, LIVING, DYING };
-enum Organism _board[totalRows][totalCols];
 
 cout << "How many organisms initially? ";
-cin >> x;
+cin >> numberOfOrganisms;
 
 while (cin.get() != '\n') {   // intentionally empty loop body
 }
 
 cout << "Locations? ";
-cin >> x;
+for (int x = 0; x < totalRows; x++)
+{
+ for (int y = 0; y < totalCols; y++)
+ {
+   _board[x][y] == 0;
+ }
+cout << endl;
+return;
+}
+
+cin >> [x][y];
 
 while (cin.get() != '\n') {   // intentionally empty loop body
 }
