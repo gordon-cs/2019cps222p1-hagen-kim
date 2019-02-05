@@ -8,56 +8,24 @@ using std::cout;
 using std::endl;
 
 using std::array;
-
-// definition of what each of the constants represent
-static const int activeRows = 18;
-static const int activeCols = 50;
-static const int totalRows = activeRows + 2;
-static const int totalCols = activeCols + 2;
-static const char ESC = 27;
+  
 
 
-
-int main()
-{
-int numberOfOrganisms;
-int row;
-int col;
-int gen;
-
-
-/*for (int i = 0; i < activeRows; i++)
-{
-  for (int j = 0; j < activeCols; j++)
-  {
-    board[i][j] = ' ';
-  }
-*/
-
-
-class board {
-  public:
-  board();
-  board( const board& board);
-  ~board();
-  bool  
-
-
-/*void displayboard()
+void displayboard()
 {
   for(int r = 0; r < activeRows; r++)
   {
     for(int c = 0; c < activeCols; c++)
     {
-      board[r][c]==0;
+      switch(board[r][c]){
+      case LIVING:        cout << '*'; break;
+      case NONE:          cout << ' '; break;
     }
+
   }
   cout << endl;
   return;
-}*/
-
-
-//enum Organism {NONE, LIVING};
+}
 
 
 cout << "How many organisms initially? ";

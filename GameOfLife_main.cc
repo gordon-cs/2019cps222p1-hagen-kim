@@ -8,6 +8,11 @@ using std::endl;
 
 #include "GameOfLife.h"
 
-int main() {
-
+int main()
+{
+int numberOfOrganisms;
+int row;
+int col;
+int gen;
+  
 }
