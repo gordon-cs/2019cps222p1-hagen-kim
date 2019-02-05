@@ -12,14 +12,14 @@ using std::endl;
 
 bool tttb_state_vertical_test() {
     GameOfLifeBoard b;
-    b.set(0, 0, GameOfLifeXO::X);
-    b.set(1, 0, GameOfLifeXO::X);
-    if (GameOfLifeXO::X == b.state()) {
+    b.set(0, 0, Organism::NONE);
+    b.set(1, 0, Organism::NONE);
+    if (Organism::NONE == b.state()) {
         cout << "tttb_person_vertical_test() failed for 2 in a row" << endl;
         return false;
     }
-    b.set(2, 0, GameOfLifeXO::X);
-    if (GameOfLifeXO::X != b.state()) {
+    b.set(2, 0, Organism::NONE);
+    if (Organism::NONE != b.state()) {
         cout << "tttb_person_vertical_test() failed for 3 in a row" << endl;
         return false;
     }
@@ -28,14 +28,14 @@ bool tttb_state_vertical_test() {
 
 bool tttb_state_horizontal_test(){
     GameOfLifeBoard b;
-    b.set(0, 0, GameOfLifeXO::O);
-    b.set(0, 1, GameOfLifeXO::O);
-    if (GameOfLifeXO::O == b.state()) {
+    b.set(0, 0, Organism::LIVING);
+    b.set(0, 1, Organism::LIVING);
+    if (Organism::LIVING == b.state()) {
 	cout << "tttb_person_horizontal_test() failed for 2 in a row" << endl;
 	return false;
     }
-    b.set(0, 2, GameOfLifeXO::O);
-    if (GameOfLifeXO::O != b.state()) {
+    b.set(0, 2, Organism::LIVING);
+    if (Organism::LIVING != b.state()) {
 	cout << "tttb_state_horizontal_test() failed for 3 in a row" << endl;
 	return false;
     }
@@ -44,14 +44,14 @@ bool tttb_state_horizontal_test(){
 
 bool tttb_state_diagonal_test() {
     GameOfLifeBoard b;
-    b.set(0, 0, GameOfLifeXO::X);
-    b.set(1, 1, GameOfLifeXO::X);
-    if (GameOfLifeXO::X == b.state()) {
+    b.set(0, 0, Organism::NONE);
+    b.set(1, 1, Organism::NONE);
+    if (Organism::NONE == b.state()) {
         cout << "tttb_state_diagonal_test() failed for 2 in a row" << endl;
         return false;
     }
-    b.set(2, 2, GameOfLifeXO::X);
-    if (GameOfLifeXO::X != b.state()) {
+    b.set(2, 2, Organism::NONE);
+    if (Organism::NONE != b.state()) {
         cout << "tttb_state_diagonal_test() failed for 3 in a row" <<endl;
         return false;
     }
