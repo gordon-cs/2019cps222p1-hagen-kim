@@ -10,6 +10,9 @@ using std::endl;
 using std::array;
   
 
+Board board::get(unsigned row, unsigned col) {
+    return _board[row][col];
+}
 
 void displayboard()
 {
@@ -17,15 +20,7 @@ void displayboard()
   {
     for(int c = 0; c < activeCols; c++)
     {
-      switch(board[r][c]){
-      case LIVING:        cout << '*'; break;
-      case NONE:          cout << ' '; break;
-    }
-
-  }
-  cout << endl;
-  return;
-}
+      
 
 
 cout << "How many organisms initially? ";

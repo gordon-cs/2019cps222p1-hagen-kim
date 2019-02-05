@@ -33,13 +33,6 @@ public:
   Organism state();
 
 
-class board {
-  public:
-  board();
-  board( const board& board);
-  ~board();
-  bool 
-
 //Initializing the board
 private:
   enum Organism _board[totalRows][totalCols];
@@ -80,8 +73,9 @@ public:
 
 private:
   GameOfLifeBoard _board;
-  GameOfLifeMove* moves_* [900] = {};
-
+  GameOfLifeMove* moves_[900] = {
+  
+  };
 };
 
 #endif // GAMEOFLIFE_H_
