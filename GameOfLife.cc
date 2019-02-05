@@ -7,12 +7,32 @@
 using std::cout;
 using std::endl;
 
+using namespace std;
+
+
+class Board::Board
+{
+//Initializing the board
+public:
+  Board() = {
+     for (int row = 0; row < totalRows; row++){
+        for (int col = 0; col < totalCols; col++) {
+                _board[row][col] = 0;
+  }
+}
+}
+};
+
+/*void displayboard();
+}
+
 using std::array;
   
 
 Board board::get(unsigned row, unsigned col) {
     return _board[row][col];
 }
+
 
 void displayboard()
 {
