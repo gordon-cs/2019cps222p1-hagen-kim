@@ -8,7 +8,7 @@
 
 #include <iostream>
 using std::istream;
-enum Organism { NONE, GESTATING, LIVING, DYING };
+enum Organism { NONE, LIVING };
 
 
 class Board {
@@ -28,11 +28,13 @@ private:
 public:
 	Board();
 
+
 public:
 	printBoard();
 
 public:
 	updateBoard();
+
 };
 
 
@@ -45,6 +47,14 @@ public:
   // Checks the condition of life and returns result
   Organism state();
 
+
+};
+
+
+
+//Initializing the board
+private:
+  enum Organism _board[totalRows][totalCols];
 };
 
 
