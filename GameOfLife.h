@@ -40,36 +40,11 @@ public:
 class GameOfLifeBoard{
 public:
   Organism get(unsigned row, unsigned col);
-  void set(unsigned row, unsigned col, Organism person);
+  void set(unsigned row, unsigned col);
 
   // Checks the condition of life and returns result
   Organism state();
 
-};
-
-
-// Encapsulates one move
-class GameOfLifeMove {
-public:
-  // Constructor. (row, col) identifies place on board; (0, 0) is bottom left.
-  GameOfLifeMove(Organism person, unsigned row, unsigned col);
-   
-  // Constructor reads coordinates from input stream in format
-  // row  col
-  GameOfLifeMove(Organism person, istream input);
- 
-  // Getters
-  Organism person();
-  unsigned row();
-  unsigned col();
-
-  private:
-    Organism person_;
-
-  // location on board: (0, 0) is bottom left
-  unsigned row_;
-  unsigned col_;
-  
 };
 
 
