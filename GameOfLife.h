@@ -10,8 +10,6 @@
 using std::istream;
 
 enum Organism { NONE, LIVING };
-Organism _board[18][50];
-
 
 // Stores and manipulates the board and state of Life game
 class GameOfLifeBoard{
@@ -23,7 +21,7 @@ public:
   Organism state();
 
 private:
-  Organism _board[18][50] = {
+  Organism _board[totalRows][totalCols] = {
 		{ Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none},
 		{ Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none},
 		{ Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none},
