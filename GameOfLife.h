@@ -10,35 +10,44 @@
 using std::istream;
 
 enum Organism { NONE, LIVING };
-Organism _board[totalRows][totalCols];
+Organism _board[18][50];
+
 
 // Stores and manipulates the board and state of Life game
 class GameOfLifeBoard{
 public:
-  GameOfLifeXO get(unsigned row, unsigned col);
-  void set(unsigned row, unsigned col, GameOfLifeXO person);
+  Organism get(unsigned row, unsigned col);
+  void set(unsigned row, unsigned col, Organism person);
 
   // Checks the condition of life and returns result
-  GameOfLifeXO state();
+  Organism state();
 
 private:
-  GameOfLifeXO board_[18][50] = {};
-  
+  Organism _board[18][50] = {
+		{ Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none},
+		{ Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none},
+		{ Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none},
+		{ Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none, Organism::none}  
+	};
 };
 
 // Encapsulates one move
 class GameOfLifeMove {
 public:
   // Constructor. (row, col) identifies place on board; (0, 0) is bottom left.
-  GameOfLifeMove(GameOfLifeXO person, unsigned row, unsigned col)
+  GameOfLifeMove(Organism person, unsigned row, unsigned col);
    
+  // Constructor reads coordinates from input stream in format
+  // row  col
+  GameOfLifeMove(Organism person, istream input);
+ 
   // Getters
-  GameOfLifeXO person();
+  Organism person();
   unsigned row();
   unsigned col();
 
 private:
-  GameOfLifeXO person_;
+  Organism person_;
 
   // location on board: (0, 0) is bottom left
   unsigned row_;
@@ -51,7 +60,7 @@ class GameOfLifeGame {
 public:
 
 private:
-  GameOfLifeBoard board_;
+  GameOfLifeBoard _board;
   GameOfLifeMove* moves_* [900] = {};
 
 };
