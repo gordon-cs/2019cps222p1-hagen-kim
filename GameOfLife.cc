@@ -9,39 +9,17 @@ using std::endl;
 
 using namespace std;
 
-
-class Board::Board
-{
-//Initializing the board
-public:
-  Board() = {
-     for (int row = 0; row < totalRows; row++){
-        for (int col = 0; col < totalCols; col++) {
-                _board[row][col] = 0;
+// Initialize the board
+Board::Board(){
+    for (int r = 0; r < totalRows; r++){
+        for (int c = 0; c < totalCols; c++) {
+                _board[r][c] = 0;
   }
-}
 }
 };
 
-/*void displayboard();
-}
-
-using std::array;
-  
-
-Board board::get(unsigned row, unsigned col) {
-    return _board[row][col];
-}
-
-
-void displayboard()
-{
-  for(int r = 0; r < activeRows; r++)
-  {
-    for(int c = 0; c < activeCols; c++)
-    {
-      
-
+enum Organism { NONE, GESTATING, LIVING, DYING };
+enum Organism _board[totalRows][totalCols];
 
 cout << "How many organisms initially? ";
 cin >> numberOfOrganisms;
@@ -74,10 +52,10 @@ cout << ESC << "[H" << "Generation " << gen << ":" << endl;
 cout << ESC << "[H" << ESC << "[J" << "Initial:" << endl;
 
 cout << "+--------------------------------------------------+" << endl;
-  for (int i = 0; i < activeRows; i++)
+  for (int r = 0; r < activeRows; r++)
   {
     cout << "|";
-    for (int j = 0; j < activeCols; j++)
+    for (int c = 0; c < activeCols; c++)
     {
       cout << " ";
     }

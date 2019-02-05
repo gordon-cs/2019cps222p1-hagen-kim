@@ -7,12 +7,14 @@ using std::cout;
 using std::endl;
 
 #include "GameOfLife.h"
+#include "GameOfLife.cc"
 
-int main()
-{
-int numberOfOrganisms;
-int row;
-int col;
-int gen;
-  
+int main() {
+	int numberOfOrganisms;
+	int row;
+	int col;
+	int gen;
+	
+	printBoard();
+	updateBoard();
 }
