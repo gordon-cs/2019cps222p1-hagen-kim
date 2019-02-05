@@ -3,6 +3,7 @@
 #include <vector>
 #include "GameOfLife.h"
 
+
 using std::cout;
 using std::endl;
 
@@ -17,17 +18,61 @@ Board::Board(){
 }
 };
 
+<<<<<<< HEAD
 enum Organism { NONE, GESTATING, LIVING, DYING };
 enum Organism _board[totalRows][totalCols];
+=======
+int main()
+{
+int x;
+int row;
+int col;
+int gen;
+
+/*void displayboard();
+}
+
+using std::array;
+  
+
+
+
+void displayboard()
+{
+  for(int r = 0; r < activeRows; r++)
+  {
+    for(int c = 0; c < activeCols; c++)
+    {
+      switch(board[r][c]){
+      case LIVING:        cout << '*'; break;
+      case NONE:          cout << ' '; break;
+    }
+
+  }
+  cout << endl;
+  return;
+}
+
+>>>>>>> 8fb3e9a38b9f31e636107267dac39610d71baa47
 
 cout << "How many organisms initially? ";
-cin >> x;
+cin >> numberOfOrganisms;
 
 while (cin.get() != '\n') {   // intentionally empty loop body
 }
 
 cout << "Locations? ";
-cin >> x;
+for (int x = 0; x < totalRows; x++)
+{
+ for (int y = 0; y < totalCols; y++)
+ {
+   _board[x][y] == 0;
+ }
+cout << endl;
+return;
+}
+
+cin >> [x][y];
 
 while (cin.get() != '\n') {   // intentionally empty loop body
 }

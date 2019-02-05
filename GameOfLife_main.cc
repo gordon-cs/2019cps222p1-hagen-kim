@@ -9,8 +9,18 @@ using std::endl;
 #include "GameOfLife.h"
 #include "GameOfLife.cc"
 
+<<<<<<< HEAD
 int main() {
 
 	printBoard();
 	updateBoard();
+=======
+int main()
+{
+int numberOfOrganisms;
+int row;
+int col;
+int gen;
+  
+>>>>>>> 8fb3e9a38b9f31e636107267dac39610d71baa47
 }
