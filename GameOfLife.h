@@ -27,6 +27,11 @@ private:
 public:
 	Board();
 
+public:
+	printBoard();
+
+public:
+	updateBoard();
 };
 
 // Stores and manipulates the board and state of Life game

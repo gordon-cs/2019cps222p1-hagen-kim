@@ -7,7 +7,10 @@ using std::cout;
 using std::endl;
 
 #include "GameOfLife.h"
+#include "GameOfLife.cc"
 
 int main() {
 
+	printBoard();
+	updateBoard();
 }
