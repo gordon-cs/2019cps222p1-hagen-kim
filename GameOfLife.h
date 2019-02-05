@@ -28,6 +28,13 @@ private:
 public:
 	Board();
 
+
+public:
+	printBoard();
+
+public:
+	updateBoard();
+
 };
 
 
@@ -41,10 +48,15 @@ public:
   Organism state();
 
 
+};
+
+
+
 //Initializing the board
 private:
   enum Organism _board[totalRows][totalCols];
 };
+
 
 #endif // GAMEOFLIFE_H_
 
