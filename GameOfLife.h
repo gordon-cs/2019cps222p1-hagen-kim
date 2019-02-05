@@ -10,16 +10,24 @@
 using std::istream;
 enum Organism { NONE, GESTATING, LIVING, DYING };
 
-// definition of what each of the constants represent
-static const int activeRows = 18;
-static const int activeCols = 50;
-static const int totalRows = activeRows + 2;
-static const int totalCols = activeCols + 2;
-static const char ESC = 27;
+class Board {
 
-// how each of the constants is displayed on the board 
-static const char LIVING = "*";
-static const char NONE = " ";
+private:
+	// definition of what each of the constants represent
+	static const int activeRows = 18;
+	static const int activeCols = 50;
+	static const int totalRows = activeRows + 2;
+	static const int totalCols = activeCols + 2;
+	static const char ESC = 27;
+
+	// how each of the constants is displayed on the board 
+	static const char LIVING = "*";
+	static const char NONE = " ";
+
+public:
+	Board();
+
+};
 
 // Stores and manipulates the board and state of Life game
 class GameOfLifeBoard{

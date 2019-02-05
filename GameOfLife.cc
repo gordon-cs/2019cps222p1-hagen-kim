@@ -9,22 +9,25 @@ using std::endl;
 using namespace std;
 
 
+class Board::Board
+{
+//Initializing the board
+public:
+  Board() = {
+     for (int row = 0; row < totalRows; row++){
+        for (int col = 0; col < totalCols; col++) {
+                _board[row][col] = 0;
+  }
+}
+}
+};
+
 int main()
 {
 int x;
 int row;
 int col;
 int gen;
-
-//Initializing the board
-private:
-  enum Organism _board[totalRows][totalCols];
-  for (int i = 0; i < activeRows; i++){
-        for (int j = 0; j < activeCols; j++) {
-                _board[i][j] = 0;
-  }
-}
-
 
 /*void displayboard();
 }
