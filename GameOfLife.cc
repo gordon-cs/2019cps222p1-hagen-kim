@@ -39,8 +39,8 @@ for (int x = 0; x < totalRows; x++)
 cout << endl;
 return;
 }
+cin >> _board[x][y];
 
-cin >> [x][y];
 
 while (cin.get() != '\n') {   // intentionally empty loop body
 }
