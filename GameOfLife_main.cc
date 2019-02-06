@@ -14,7 +14,8 @@ int main() {
 	int row;
 	int col;
 	int gen;
-	
+
+	Board();
 	printBoard();
 	updateBoard();
 }

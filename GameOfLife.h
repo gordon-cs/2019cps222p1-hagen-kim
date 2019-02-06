@@ -8,56 +8,32 @@
 
 #include <iostream>
 using std::istream;
+
+// represent the status on the board
 enum Organism { NONE, LIVING };
 
-
 class Board {
-
-private:
-	// definition of what each of the constants represent
-	static const int activeRows = 18;
-	static const int activeCols = 50;
-	static const int totalRows = activeRows + 2;
-	static const int totalCols = activeCols + 2;
-	static const char ESC = 27;
-
-	// how each of the constants is displayed on the board 
-	static const char LIVING = "*";
-	static const char NONE = " ";
-
 public:
+	// constructor
 	Board();
 
+public:
+	// print the board
+	void printBoard();
 
 public:
-	printBoard();
+	// mutator
+	void updateBoard();
 
-public:
-	updateBoard();
-
-};
-
-
-// Stores and manipulates the board and state of Life game
-class GameOfLifeBoard{
-public:
-  Organism get(unsigned row, unsigned col);
-  void set(unsigned row, unsigned col);
-
-  // Checks the condition of life and returns result
-  Organism state();
-
-
-};
-
-
-
-//Initializing the board
 private:
-  enum Organism _board[totalRows][totalCols];
+        static const int activeRows;
+        static const int activeCols;
+        static const int totalRows;
+        static const int totalCols;
+
+        // used to clear the screen before the initial board is displayed at toplevel near the start of the file
+        static const char ESC = 27;
 };
 
 
 #endif // GAMEOFLIFE_H_
-
-
