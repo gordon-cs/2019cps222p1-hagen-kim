@@ -26,6 +26,16 @@ class Board
 	static const char LIVING = '*';
 	static const char NONE = ' ';
 
+
+     public:
+             Board();
+
+     public:
+        void printBoard();
+
+     public:
+        void updateBoard();
+
 };
 
 // Stores and manipulates the board and state of Life game
