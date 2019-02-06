@@ -1,0 +1,20 @@
+# Makefile for project 1 - GameOfLife
+
+# Builds and tests GameOfLife program.
+#
+
+# GameOfLife uses C++ 2011.  Compile for debugging (-g) with warnings.
+# Google Test needs -pthread.
+CXXFLAGS=-std=c++11 -g -Wall -Wextra -pthread
+
+# Instructor's note: First target is the default; use it to build everything.
+all:	GameOfLife \
+	GameOfLife_test
+
+# Main program for users to use.
+GameOfLife :	GameOfLife_main.o GameOfLife.o
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -o $@ $^
+
+# Program to run tests and report results.
+GameOfLife_test:	GameOfLife_test.o GameOfLife.o
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -o $@ $^
