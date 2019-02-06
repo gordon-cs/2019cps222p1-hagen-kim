@@ -16,7 +16,15 @@ int main()
      int row;
      int col;
      int gen;
-  
+     static const int activeRows = 18;
+     static const int activeCols = 50;
+     static const int totalRows = activeRows + 2;
+     static const int totalCols = activeCols + 2;
+     int _board[18][50];
+     int x;
+     int y;
+     static const char ESC = 27;
+
      //printBoard();
      //updateBoard();
 
@@ -37,7 +45,6 @@ int main()
         }
 
       cout << endl;
-      return;
      }
 
       cin >> _board[x][y];
