@@ -39,7 +39,7 @@ class GameOfLifeBoard : public Board
   	Organism state();
 
      //Initializing the board
-     private:
+     protected:
           enum Organism _board[totalRows][totalCols];
 };
 

@@ -18,58 +18,6 @@ Board::Board(){
 }
 };
 
-enum Organism { NONE, GESTATING, LIVING, DYING };
-enum Organism _board[totalRows][totalCols];
-
-cout << "How many organisms initially? ";
-cin >> numberOfOrganisms;
-
-while (cin.get() != '\n') {   // intentionally empty loop body
-}
-
-cout << "Locations? ";
-for (int x = 0; x < totalRows; x++)
-{
- for (int y = 0; y < totalCols; y++)
- {
-   _board[x][y] == 0;
- }
-cout << endl;
-return;
-}
-cin >> _board[x][y];
-
-
-while (cin.get() != '\n') {   // intentionally empty loop body
-}
-
-cout << "Generations? ";
-cin >> gen;
-
-while (cin.get() != '\n') {   // intentionally empty loop body
-}
-cout << ESC << "[H" << "Generation " << gen << ":" << endl;
-cout << ESC << "[H" << ESC << "[J" << "Initial:" << endl;
-
-cout << "+--------------------------------------------------+" << endl;
-  for (int r = 0; r < activeRows; r++)
-  {
-    cout << "|";
-    for (int c = 0; c < activeCols; c++)
-    {
-      cout << " ";
-    }
-    cout << "|";
-    cout << endl;
-  }
-  cout << "+--------------------------------------------------+" << endl;
-
-  cout << ESC << "[23;1H" << ESC << "[K" << "Press RETURN to continue";
-  while (cin.get() != '\n'){
-
-  }
-}
-
 /*for (int i = 0; i < x; i++) {
   cin >> row;
   cin >> col;
