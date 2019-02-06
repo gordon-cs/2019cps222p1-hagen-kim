@@ -11,9 +11,10 @@ using std::istream;
 enum Organism { NONE, LIVING };
 
 
-class Board {
+class Board
+{
+     public:
 
-private:
 	// definition of what each of the constants represent
 	static const int activeRows = 18;
 	static const int activeCols = 50;
@@ -22,39 +23,24 @@ private:
 	static const char ESC = 27;
 
 	// how each of the constants is displayed on the board 
-	static const char LIVING = "*";
-	static const char NONE = " ";
-
-public:
-	Board();
-
-
-public:
-	printBoard();
-
-public:
-	updateBoard();
+	static const char LIVING = '*';
+	static const char NONE = ' ';
 
 };
-
 
 // Stores and manipulates the board and state of Life game
-class GameOfLifeBoard{
-public:
-  Organism get(unsigned row, unsigned col);
-  void set(unsigned row, unsigned col);
+class GameOfLifeBoard : public Board
+{
+     public:
+	Organism get(unsigned row, unsigned col);
+ 	void set(unsigned row, unsigned col);
 
-  // Checks the condition of life and returns result
-  Organism state();
+  	// Checks the condition of life and returns result
+  	Organism state();
 
-
-};
-
-
-
-//Initializing the board
-private:
-  enum Organism _board[totalRows][totalCols];
+     //Initializing the board
+     private:
+          enum Organism _board[totalRows][totalCols];
 };
 
 
