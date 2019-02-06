@@ -8,8 +8,7 @@ using std::cout;
 using std::endl;
 
 #include "GameOfLife.h"
-
-
+#include <vector>
 int main()
  {
      int numberOfOrganisms;
@@ -20,9 +19,9 @@ int main()
      static const int activeCols = 50;
      static const int totalRows = activeRows + 2;
      static const int totalCols = activeCols + 2;
-     int _board[18][50];
      int x;
      int y;
+     int _board[totalRows][totalCols];
      static const char ESC = 27;
 
      //printBoard();
@@ -41,7 +40,7 @@ int main()
      {
         for (int y = 0; y < totalCols; y++)
         {
-         _board[x][y] == 0;
+          _board[x][y] == 0;
         }
 
       cout << endl;
