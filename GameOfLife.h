@@ -25,6 +25,16 @@ class Board
 	// how each of the constants is displayed on the board 
 	static const char LIVING = '*';
 	static const char NONE = ' ';
+	
+	
+     public:
+             Board();
+
+     public:
+        void printBoard();
+
+     public:
+        void updateBoard();
 
 };
 
