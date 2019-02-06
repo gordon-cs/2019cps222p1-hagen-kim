@@ -22,19 +22,9 @@ class Board
 	static const int totalCols = activeCols + 2;
 	static const char ESC = 27;
 
-	// how each of the constants is displayed on the board 
+	// how each of the constants is displayed on the board
 	static const char LIVING = '*';
 	static const char NONE = ' ';
-	
-	
-     public:
-             Board();
-
-     public:
-        void printBoard();
-
-     public:
-        void updateBoard();
 
 
      public:
