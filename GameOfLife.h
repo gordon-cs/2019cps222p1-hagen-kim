@@ -8,33 +8,39 @@
 #include <vector>
 #include <iostream>
 using std::istream;
+
 enum Organism { NONE, LIVING };
+Organism _board[totalRows][totalCols];
 
+// stores and manipulates the board and state of life game
+class Board {
 
-class Board
-{
-    private:
-        // definition of what each of the constants represent
-        static const int activeRows = 18;
-        static const int activeCols = 50;
-        static const int totalRows = activeRows + 2;
-        static const int totalCols = activeCols + 2;
+private:
+	// definition of what each of the constants represent
+	static const int activeRows = 18;
+	static const int activeCols = 50;
+	static const int totalRows = activeRows + 2;
+	static const int totalCols = activeCols + 2;
+	static const char ESC = 27;
 
-        // Constructor  (same name as class, no return type, no need to specify constructor)
-    public:
-        Board();
+	// how each of the constants is displayed on the board 
+	static const char LIVING = "*";
+	static const char NONE = " ";
+  
+// Constructor  (same name as class, no return type, no need to specify constructor
+public:
+	Board();
 
-        // Prints the Game Of Life board
-        void printBoard();
+// Initializing the board
+public:
+	void printBoard();
 
-        // Updates the Game Of Life board
-        void updateBoard();
+ // Updates the Game Of Life board
+ public:
+  void updateBoard();
 
-        //Initializing the board
-
-
-     private:
-        Organism _board[totalRows][totalCols];
+ private:
+    Organism _board[totalRows][totalCols];
 };
 
 
