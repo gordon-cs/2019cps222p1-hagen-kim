@@ -26,10 +26,10 @@ public:
 	void updateBoard();
 
 private:
-        static const int activeRows;
-        static const int activeCols;
-        static const int totalRows;
-        static const int totalCols;
+        static const int activeRows = 18;
+        static const int activeCols = 50;
+        static const int totalRows = activeRows + 2;
+        static const int totalCols = activeCols + 2;
 
         // used to clear the screen before the initial board is displayed at toplevel near the start of the file
         static const char ESC = 27;
