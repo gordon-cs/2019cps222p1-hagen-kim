@@ -30,9 +30,10 @@ private:
         static const int activeCols = 50;
         static const int totalRows = activeRows + 2;
         static const int totalCols = activeCols + 2;
-
+	static int numberOfOrganisms;
         // used to clear the screen before the initial board is displayed at toplevel near the start of the file
         static const char ESC = 27;
+	Organism _board[totalRows][totalCols];
 };
 
 

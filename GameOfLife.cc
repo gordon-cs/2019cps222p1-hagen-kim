@@ -2,9 +2,8 @@
 #include <cstdlib>
 #include <vector>
 #include "GameOfLife.h"
-#define NONE ' '
-#define LIVING '*'
 
+using std::cin;
 using std::cout;
 using std::endl;
 
@@ -12,9 +11,10 @@ using namespace std;
 
 // Initialize the board
 Board::Board()
-{     for (int r = 0; r < totalRows; r++){
+{    
+     for (int r = 0; r < totalRows; r++){
         for (int c = 0; c < totalCols; c++) {
-                _board[r][c] = NONE;
+                _board[r][c] == NONE;
 	  }
 	}
 }
@@ -29,17 +29,10 @@ void Board::printBoard()
   }
 
   cout << "Locations? ";
-  for (int x = 0; x < totalRows; x++)
-  {
-     for (int y = 0; y < totalCols; y++)
-      {
-          _board[x][y] == 0;
-       }
-        cout << endl;
-        return;
-   }
-
-  cin >> [x][y];
+ }
+  int r;
+  int c;
+  cin >> r >> c;
 
   while (cin.get() != '\n') {   // intentionally empty loop body
   }
