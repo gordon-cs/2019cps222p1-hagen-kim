@@ -3,28 +3,14 @@
 // CPS222 Project 1
 
 #include <iostream>
+#include "GameOfLife.h"
+
 using std::cin;
 using std::cout;
 using std::endl;
 
-#include "GameOfLife.h"
-#include <vector>
 int main()
 {
-     int numberOfOrganisms;
-     int row;
-     int col;
-     int gen;
-     static const int activeRows = 18;
-     static const int activeCols = 50;
-     static const int totalRows = activeRows + 2;
-     static const int totalCols = activeCols + 2;
-     const char LIVING = '*';
-     const char NONE = ' ';
-     int x;
-     int y;
-     int _board[totalRows][totalCols];
-     static const char ESC = 27;
 
 
      cout << "How many organisms initially? ";
@@ -36,6 +22,16 @@ int main()
 
      cout << "Locations? ";
 
+         for(int x = 0; x < activeRows; x++)
+         {
+             for(int y = 0; y < activeCols; y++)
+             {
+                  cin >> userInput;
+                  array[x][y] = userInput;
+              }
+              return array[x][y];
+          }
+
 /*     for (int x = 0; x < totalRows; x++)
      {
         for (int y = 0; y < totalCols; y++)
@@ -46,7 +42,7 @@ int main()
       cout << endl;
      }
 */
-      cin >> _board[x][y];
+     // cin >> _board[x][y];
 
       while (cin.get() != '\n')
       {   // intentionally empty loop body
@@ -83,11 +79,12 @@ int main()
       {   // intentionally empty loop body
       }
 
-      //Board();
 
-      //printBoard(_board);
+     char _board[totalRows][totalCols];
 
-      //updateBoard(_board);
+     printBoard(_board);
+
+     updateBoard(_board);
 
 };
 

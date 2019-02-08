@@ -13,16 +13,23 @@ enum Organism { NONE, LIVING };
 
 class Board
 {
-    private:
+    public:
+        // This constructor initializes the Board to zero
+        Board();
+
         // definition of what each of the constants represent
         static const int activeRows = 18;
         static const int activeCols = 50;
         static const int totalRows = activeRows + 2;
         static const int totalCols = activeCols + 2;
-
-        // Constructor  (same name as class, no return type, no need to specify constructor)
-    public:
-        Board();
+        int numberOfOrganisms;
+        int row;
+        int col;
+        int gen;
+        int x;
+        int y;
+        int userInput;
+        static const char ESC = 27;
 
         // Prints the Game Of Life board
         void printBoard();
@@ -30,12 +37,11 @@ class Board
         // Updates the Game Of Life board
         void updateBoard();
 
-        //Initializing the board
-
-
+     //Initializing the board
      private:
         Organism _board[totalRows][totalCols];
-};
+
+}; 
 
 
 #endif // GAMEOFLIFE_H_
