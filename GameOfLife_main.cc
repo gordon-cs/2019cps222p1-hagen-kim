@@ -9,25 +9,15 @@ using std::cin;
 using std::cout;
 using std::endl;
 
+
 int main()
 {
 
-     int row;
-     int col;
-     int gen;
-     const char LIVING = '*';
-     const char NONE = ' ';
-     static const int activeRows = 18;
-     static const int activeCols = 50;
-     static const int totalRows = activeRows + 2;
-     static const int totalCols = activeCols + 2;
-     static const char ESC = 27;
-     int userInput;
-     int i = 0;
-     int j = 0;
-     char updateBoard[totalRows][totalCols];
+     Board board;
+     
+     board.printBoard();
+/*
      int numberOfOrganisms;
-
      cout << "How many organisms initially? ";
      cin >> numberOfOrganisms;
 
@@ -37,32 +27,19 @@ int main()
 
      cout << "Locations? ";
 
-         for(int x = 0; x < activeRows; x++)
+         for(int r = 0; r < activeRows; r++)
          {
-             for(int y = 0; y < activeCols; y++)
+             for(int c = 0; c < activeCols; c++)
              {
-                  cin >> userInput;
-                  array[x][y] = userInput;
-              }
-              return array[x][y];
-          }
-
-/*     for (int x = 0; x < totalRows; x++)
-     {
-        for (int y = 0; y < totalCols; y++)
-        {
-          _board[x][y] == 0;
-        }
-
-      cout << endl;
-     }
-*/
-     // cin >> _board[x][y];
+                  cin >> r >> c;
+                  board.setBoard(r, c);
+             }
 
       while (cin.get() != '\n')
       {   // intentionally empty loop body
       }
 
+      int gen;
       cout << "Generations? ";
       cin >> gen;
 
@@ -75,10 +52,10 @@ int main()
 
       cout << "+--------------------------------------------------+" << endl;
 
-      for (int i = 0; i < activeRows; i++)
+      for (int r = 0; r < activeRows; r++)
       {
         cout << "|";
-          for (int j = 0; j < activeCols; j++)
+          for (int c = 0; c < activeCols; c++)
           {
             cout << " ";
           }
@@ -93,14 +70,12 @@ int main()
       while (cin.get() != '\n')
       {   // intentionally empty loop body
       }
+   }
+*/
+    //printBoard(_board);
 
+    // updateBoard(_board);
 
-     char _board[totalRows][totalCols];
-
-     printBoard(_board);
-
-     updateBoard(_board);
-
-};
+}
 
 

@@ -10,14 +10,19 @@ using namespace std;
 
 
 // Initialize the board
-/*Board::Board(const int tRows, const int tCols):
+Board::Board()
 {
-     totalRows(tRows),
-     totalCols(tCols)
+    for (int r = 0; r < totalRows; r++)
+    {
+        for (int c = 0; c < totalCols; c++)
+        {
+            _board[r][c] = NONE;
+        }
+    }
 }
-*/
 
-void Board(Organism _board[totalRows][totalCols])
+
+/*void Board(Organism _board[totalRows][totalCols])
 {
     for (int r = 0; r < totalRows-2; r++)
     {
@@ -26,7 +31,7 @@ void Board(Organism _board[totalRows][totalCols])
              cout << _board[r][c];
         }
      }  cout << endl;
-
+*/
 
 
 
@@ -43,7 +48,7 @@ void Board(Organism _board[totalRows][totalCols])
 
 
 // counts the living organisms
-void Board(Organism _board[totalRows][totalCols])
+/*void Board(Organism _board[totalRows][totalCols])
  {
     for (int r = 0; r < totalRows-1; r++ )
     {
@@ -54,10 +59,10 @@ void Board(Organism _board[totalRows][totalCols])
        cout << endl;
    }
 }
+*/
 
 
-
-void  printBoard(Organism _board[totalRows][totalCols])
+void Board::printBoard()
 {
     for (int r = 0; r < totalRows; r++)
     {
@@ -100,7 +105,7 @@ void  printBoard(Organism _board[totalRows][totalCols])
          }
 
 
-         updateBoard[r][c] = NONE;
+         _board[r][c] = NONE;
          // counts the empty organisms
          if (_board[r-1][c-1] == NONE)
          {
@@ -141,7 +146,7 @@ void  printBoard(Organism _board[totalRows][totalCols])
 
 
 
-void switch Board(Organism _board[totalRows][totalCols])
+/*void switch Board(Organism _board[totalRows][totalCols])
 {
      for(int r = 0; r < totalRows; r++)
      {
@@ -150,3 +155,4 @@ void switch Board(Organism _board[totalRows][totalCols])
 
      }
 }
+*/
