@@ -45,10 +45,25 @@ void Board(Organism _board[totalRows][totalCols])
 // counts the living organisms
 void Board(Organism _board[totalRows][totalCols])
  {
-    for (int r = 0; r < activeRows; r++ )
+    for (int r = 0; r < totalRows-1; r++ )
     {
-       for (int c = 0; c < activeCols; c++)
+       for (int c = 0; c < totalCols-1; c++)
        {
+           cout << _board[r][c];
+       }
+       cout << endl;
+   }
+}
+
+
+
+void  printBoard(Organism _board[totalRows][totalCols])
+{
+    for (int r = 0; r < totalRows; r++)
+    {
+       for (int c = 0; c < totalCols; c++)
+       {
+
          int count = 0;
 
          if (_board[r-1][c-1] == LIVING)
@@ -109,16 +124,29 @@ void Board(Organism _board[totalRows][totalCols])
          }
          else if (_board[r-1][c+1] == NONE)
          {
-          count = count + 1;
+           count = count + 1;
          }
          else if (_board[r][c+1] == NONE)
          {
-          count = count + 1;
+           count = count + 1;
          }
          else if (_board[r+1][c+1] == NONE)
          {
-          count = count + 1;
+           count = count + 1;
+         }
       }
-    }
-  }
+   }
+}
+
+
+
+
+void switch Board(Organism _board[totalRows][totalCols])
+{
+     for(int r = 0; r < totalRows; r++)
+     {
+        for(int c = 0; c < totalCols; c++)
+        {
+
+     }
 }
