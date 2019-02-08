@@ -8,9 +8,11 @@
 
 #include <iostream>
 using std::istream;
+
 enum Organism { NONE, LIVING };
+Organism _board[totalRows][totalCols];
 
-
+// stores and manipulates the board and state of life game
 class Board {
 
 private:
@@ -50,12 +52,6 @@ public:
 
 };
 
-
-
-//Initializing the board
-private:
-  enum Organism _board[totalRows][totalCols];
-};
 
 
 #endif // GAMEOFLIFE_H_
