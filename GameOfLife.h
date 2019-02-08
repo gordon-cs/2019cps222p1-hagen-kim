@@ -5,16 +5,15 @@
 // Create a "header guard"
 #ifndef GAMEOFLIFE_H_
 #define GAMEOFLIFE_H_
-
+#include <vector>
 #include <iostream>
 using std::istream;
 enum Organism { NONE, LIVING };
 
 
-class OrganismBoard
+class Board
 {
-     public:
-
+    private:
         // definition of what each of the constants represent
         static const int activeRows = 18;
         static const int activeCols = 50;
@@ -22,7 +21,8 @@ class OrganismBoard
         static const int totalCols = activeCols + 2;
 
         // Constructor  (same name as class, no return type, no need to specify constructor)
-        OrganismBoard(int activeRows, int activeCols);
+    public:
+        Board();
 
         // Prints the Game Of Life board
         void printBoard();

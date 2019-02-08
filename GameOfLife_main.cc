@@ -10,7 +10,7 @@ using std::endl;
 #include "GameOfLife.h"
 #include <vector>
 int main()
- {
+{
      int numberOfOrganisms;
      int row;
      int col;
@@ -19,24 +19,24 @@ int main()
      static const int activeCols = 50;
      static const int totalRows = activeRows + 2;
      static const int totalCols = activeCols + 2;
+     const char LIVING = '*';
+     const char NONE = ' ';
      int x;
      int y;
      int _board[totalRows][totalCols];
      static const char ESC = 27;
 
-     //printBoard();
-     //updateBoard();
 
      cout << "How many organisms initially? ";
      cin >> numberOfOrganisms;
 
-     while (cin.get() != '\n') 
+     while (cin.get() != '\n')
      {   // intentionally empty loop body
      }
 
      cout << "Locations? ";
 
-     for (int x = 0; x < totalRows; x++)
+/*     for (int x = 0; x < totalRows; x++)
      {
         for (int y = 0; y < totalCols; y++)
         {
@@ -45,7 +45,7 @@ int main()
 
       cout << endl;
      }
-
+*/
       cin >> _board[x][y];
 
       while (cin.get() != '\n')
@@ -82,4 +82,13 @@ int main()
       while (cin.get() != '\n')
       {   // intentionally empty loop body
       }
-  }
+
+      //Board();
+
+      //printBoard(_board);
+
+      //updateBoard(_board);
+
+};
+
+
