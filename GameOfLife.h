@@ -5,7 +5,7 @@
 // Create a "header guard"
 #ifndef GAMEOFLIFE_H_
 #define GAMEOFLIFE_H_
-
+#include <vector>
 #include <iostream>
 using std::istream;
 
@@ -26,32 +26,22 @@ private:
 	// how each of the constants is displayed on the board 
 	static const char LIVING = "*";
 	static const char NONE = " ";
-
+  
+// Constructor  (same name as class, no return type, no need to specify constructor
 public:
 	Board();
 
-
+// Initializing the board
 public:
-	printBoard();
+	void printBoard();
 
-public:
-	updateBoard();
+ // Updates the Game Of Life board
+ public:
+  void updateBoard();
 
+ private:
+    Organism _board[totalRows][totalCols];
 };
-
-
-// Stores and manipulates the board and state of Life game
-class GameOfLifeBoard{
-public:
-  Organism get(unsigned row, unsigned col);
-  void set(unsigned row, unsigned col);
-
-  // Checks the condition of life and returns result
-  Organism state();
-
-
-};
-
 
 
 #endif // GAMEOFLIFE_H_

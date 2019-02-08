@@ -10,118 +10,73 @@ using std::endl;
 using namespace std;
 
 // Initialize the board
-Board::Board(){
-    for (int r = 0; r < totalRows; r++){
-        for (int c = 0; c < totalCols; c++) {
-                _board[r][c] = 0;
-  }
-}
+Board::Board()
+{
+    for (int r = 0; r < totalRows; r++)
+    {
+        for (int c = 0; c < totalCols; c++)
+        {
+             _board[r][c] = 0;
+        }
+    }
 };
 
-enum Organism { NONE, GESTATING, LIVING, DYING };
-enum Organism _board[totalRows][totalCols];
-
-
-cout << "How many organisms initially? ";
-cin >> numberOfOrganisms;
-
-while (cin.get() != '\n') {   // intentionally empty loop body
-}
-
-cout << "Locations? ";
-for (int x = 0; x < totalRows; x++)
+void displayBoard(vector< vector<char> > &_board)
 {
- for (int y = 0; y < totalCols; y++)
- {
-   _board[x][y] == 0;
- }
-cout << endl;
-return;
-}
-
-cin >> [x][y];
-
-while (cin.get() != '\n') {   // intentionally empty loop body
-}
-
-cout << "Generations? ";
-cin >> gen;
-
-while (cin.get() != '\n') {   // intentionally empty loop body
-}
-cout << ESC << "[H" << "Generation " << gen << ":" << endl;
-cout << ESC << "[H" << ESC << "[J" << "Initial:" << endl;
-
-cout << "+--------------------------------------------------+" << endl;
-  for (int r = 0; r < activeRows; r++)
-  {
-    cout << "|";
-    for (int c = 0; c < activeCols; c++)
+    for (int i = 0; i < x; i++)
     {
-      cout << " ";
-    }
-    cout << "|";
-    cout << endl;
-  }
-  cout << "+--------------------------------------------------+" << endl;
+        cin >> row;
+        cin >> col;
 
-  cout << ESC << "[23;1H" << ESC << "[K" << "Press RETURN to continue";
-  while (cin.get() != '\n'){
-
-  }
+        _board[row][col] = char;
+     }
 }
-
-/*for (int i = 0; i < x; i++) {
-  cin >> row;
-  cin >> col;
-
-  _board[row][col] = LIVING;
-}
-*/
 
 
 // counts the living organisms
 
-GameOfLife :: state() {
-  for (int r = 0; r < activeRows; r++ )
-  {
-    for (int c = 0; c < activeCols; c++)
+GameOfLife :: state()
+ {
+    for (int r = 0; r < activeRows; r++ )
     {
-      int count = 0;
-      if (_board[r-1][c-1] == LIVING)
-      {
-        count = count + 1;
-      }
-      else if (_board[r][c-1] == LIVING)
-      {
-        count = count + 1;
-      }
-      else if (_board[r+1][c-1] == LIVING)
-      {
-        count = count + 1;
-      }
-      else if (_board[r-1][c] == LIVING)
-      {
-        count = count + 1;
-      }
-      else if (_board[r+1][c] == LIVING)
-      {
-        count = count + 1;
-      }
-      else if (_board[r-1][c+1] == LIVING)
-      {
-        count = count + 1;
-      }
-      else if (_board[r][c+1] == LIVING)
-      {
-        count = count + 1;
-      }
-      else if (_board[r+1][c+1] == LIVING)
-      {
-        count = count + 1;
-      }
-    }
-  }
+       for (int c = 0; c < activeCols; c++)
+       {
+         int count = 0;
+
+         if (_board[r-1][c-1] == LIVING)
+         {
+            count = count + 1;
+         }
+         else if (_board[r][c-1] == LIVING)
+         {
+            count = count + 1;
+         }
+         else if (_board[r+1][c-1] == LIVING)
+         {
+            count = count + 1;
+         }
+         else if (_board[r-1][c] == LIVING)
+         {
+            count = count + 1;
+         }
+         else if (_board[r+1][c] == LIVING)
+         {
+            count = count + 1;
+         }
+         else if (_board[r-1][c+1] == LIVING)
+         {
+            count = count + 1;
+         }
+         else if (_board[r][c+1] == LIVING)
+         {
+            count = count + 1;
+         }
+         else if (_board[r+1][c+1] == LIVING)
+         {
+            count = count + 1;
+         }
+       }
+     }
 
 
 
