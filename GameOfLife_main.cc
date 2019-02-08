@@ -12,6 +12,21 @@ using std::endl;
 int main()
 {
 
+     int row;
+     int col;
+     int gen;
+     const char LIVING = '*';
+     const char NONE = ' ';
+     static const int activeRows = 18;
+     static const int activeCols = 50;
+     static const int totalRows = activeRows + 2;
+     static const int totalCols = activeCols + 2;
+     static const char ESC = 27;
+     int userInput;
+     int i = 0;
+     int j = 0;
+     char updateBoard[totalRows][totalCols];
+     int numberOfOrganisms;
 
      cout << "How many organisms initially? ";
      cin >> numberOfOrganisms;
