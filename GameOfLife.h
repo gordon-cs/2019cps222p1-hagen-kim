@@ -18,7 +18,7 @@ class Board
 
         Board();
 
-        // allows user to place organism on board
+        // Organism is set to a specific place on the board
         void setBoard(int r, int c);
 
         // Prints the Game Of Life board
@@ -41,6 +41,8 @@ class Board
         Organism _board[totalRows][totalCols];
 
 };
+
+
 
 
 #endif // GAMEOFLIFE_H_
