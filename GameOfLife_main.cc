@@ -14,10 +14,10 @@ int main()
 {
 
      Board board;
-     
+
      board.printBoard();
-/*
-     int numberOfOrganisms;
+
+/*     int numberOfOrganisms;
      cout << "How many organisms initially? ";
      cin >> numberOfOrganisms;
 
