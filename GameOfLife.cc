@@ -2,7 +2,9 @@
 #include <cstdlib>
 #include <vector>
 #include "GameOfLife.h"
+#include "GameOfLife_main.cc"
 
+using std::cin;
 using std::cout;
 using std::endl;
 
@@ -84,14 +86,27 @@ void Board::printBoard()
 }
 
 
+void Board::generations()
+{
+     for (int r = 0; r < activeRows; r++)
+     {
+        for (int c = 0; c < activeCols; c++)
+        {
+             _board[r][c] = LIVING;
+        }
+     }
+
+}
 
 
-/*
+
+
+void Board::updateBoard()
+{
     for (int r = 0; r < totalRows; r++)
     {
        for (int c = 0; c < totalCols; c++)
        {
-
          int count = 0;
 
          if (_board[r-1][c-1] == LIVING)
@@ -167,5 +182,5 @@ void Board::printBoard()
 }
 
 
-*/
+
 

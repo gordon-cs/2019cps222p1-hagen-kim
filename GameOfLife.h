@@ -15,17 +15,19 @@ class Board
 {
     public:
         // This constructor initializes the Board to NONE
-
         Board();
 
         // Organism is set to a specific place on the board
         void setBoard(int r, int c);
 
         // Prints the Game Of Life board
-        void printBoard();
+        void printBoard()
 
         // Updates the Game Of Life board
         void updateBoard();
+
+        // Generation
+        void generations();
 
         //Initializing the board
         static const int activeRows = 18;
@@ -34,9 +36,8 @@ class Board
     private:
         static const int totalRows = activeRows + 2;
         static const int totalCols = activeCols + 2;
-        int row;
-        int col;
-        int userInput;
+        int r;
+        int c;
         static const char ESC = 27;
         Organism _board[totalRows][totalCols];
 

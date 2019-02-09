@@ -5,9 +5,12 @@
 #include <iostream>
 #include "GameOfLife.h"
 
-using std::cin;
+
 using std::cout;
 using std::endl;
+
+using namespace std;
+
 
 
 int main()
@@ -17,9 +20,9 @@ int main()
 
      board.printBoard();
 
-     //printBoard();
+     board.generations(); 
 
-    // updateBoard(_board);
+     board.updateBoard();
 
 }
 
