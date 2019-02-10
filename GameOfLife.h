@@ -20,8 +20,11 @@ class Board
         // Organism is set to a specific place on the board
         void setBoard(int r, int c);
 
+        // the state that the board is in
+        void stateBoard();
+
         // Prints the Game Of Life board
-        void printBoard()
+        void printBoard();
 
         // Updates the Game Of Life board
         void updateBoard();
@@ -40,7 +43,7 @@ class Board
         int c;
         static const char ESC = 27;
         Organism _board[totalRows][totalCols];
-
+        char new_board[activeRows][activeCols];
 };
 
 
