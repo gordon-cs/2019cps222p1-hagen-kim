@@ -9,38 +9,37 @@
 #include <iostream>
 using std::istream;
 
+
 class Board
 {
-	public:
-	   enum Organism { NONE, LIVING, DYING, GESTATING };
-	   // This constructor initializes the Board to NONE
-	   Board();
-
-	   // Organism is set to a specific place on the board
-	   void setBoard(int r, int c, Organism value);
-
-	   // The state of the board
-	   int livingNeighbors(int r, int c);
-
-	   // Prints the Game Of Life Board
-	   void printBoard();
-
-	   // Updates the Game Of Life Board
-	   void updateBoard();
-
-	   // Initializing the board
-	   static const int activeRows = 18;
-	   static const int activeCols = 50;
-
-	private:
-	   static const int totalRows = activeRows + 2;
-	   static const int totalCols = activeCols + 2;
-	   Organism _board[totalRows][totalCols];
-
+public:
+    enum Organism { NONE, LIVING, DYING, GESTATING };
+    // This constructor initializes the Board to NONE
+    Board();
+    
+    // Organism is set to a specific place on the board
+    void setBoard(int r, int c, Organism value);
+    
+    // the state that the board is in
+    int livingNeighbors(int r, int c);
+    
+    // Prints the Game Of Life board
+    void printBoard();
+    
+    // Updates the Game Of Life board
+    void updateBoard();
+    
+    //Initializing the board
+    static const int activeRows = 18;
+    static const int activeCols = 50;
+    
+private:
+    static const int totalRows = activeRows + 2;
+    static const int totalCols = activeCols + 2;
+    Organism _board[totalRows][totalCols];
 };
 
 
 
+
 #endif // GAMEOFLIFE_H_
-
-
