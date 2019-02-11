@@ -8,6 +8,7 @@
 
 using std::cout;
 using std::endl;
+
 using namespace std;
 
 int main()
@@ -19,14 +20,14 @@ int main()
     // Variables used for user input
     int r, c, numberOfOrganisms, gen;
     // Asks user to input number of organisms
-    cout << "How many organisms initialliy? ";
+    cout << "How many organisms initially? ";
     cin >> numberOfOrganisms;
     // Asks user for each organism location
     cout << "Locations? ";
     for(int x = 0; x < numberOfOrganisms; x++)
     {
-	cin >> r >> c;
-	board.setBoard(r, c, Board::LIVING);
+        cin >> r >> c;
+        board.setBoard(r, c, Board::LIVING);
     }
     // Asks user for amount of generations
     cout << "Generations? ";
@@ -36,21 +37,24 @@ int main()
     // Displays the board for each generation
     for (int x = 0; x < gen + 1; x++)
     {
-	// Prints the initial board
-	if (x == 0)
-	{
-	    cout << ESC << "[H" << ESC << "[J" << "Initial:" << endl;
+        // Prints the initial board
+        if (x == 0)
+        {
+            cout << ESC << "[H" << ESC << "[J" << "Initial:" << endl;
             board.printBoard();
             cout << ESC << "[23;1H" << ESC << "[K" << "Press RETURN to continue";
             while (cin.get() != '\n') { } // intentionally empty loop body
-         }
-	 // Prints every generation
-	 else
-	 {
-	      cout << ESC << "[H" << "Generation " << x << ":" << endl;
-              board.updateBoard();
-              cout << ESC << "[23;1H" << ESC << "[K" << "Press RETURN to continue";
-              while (cin.get() != '\n') { } // intentionally empty loop body 
-          }
-      }
- }
+        }
+        // Prints every generation
+        else
+        {
+            cout << ESC << "[H" << "Generation " << x << ":" << endl;
+            board.updateBoard();
+            cout << ESC << "[23;1H" << ESC << "[K" << "Press RETURN to continue";
+            while (cin.get() != '\n') { } // intentionally empty loop body
+        }
+    }
+}
+
+
+

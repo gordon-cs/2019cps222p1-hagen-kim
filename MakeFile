@@ -16,4 +16,3 @@ GameOfLife:	GameOfLife_main.o
 # compile .cc to .o.  (They use the flag variables defined above.)
 
 GameOfLife_main.o:		GameOfLife.h
-
