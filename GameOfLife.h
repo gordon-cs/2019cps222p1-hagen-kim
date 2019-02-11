@@ -9,41 +9,36 @@
 #include <iostream>
 using std::istream;
 
-enum class Organism { NONE, LIVING };
+class Board
+{
+	public:
+	   enum Organism { NONE, LIVING, DYING, GESTATING };
+	   // This constructor initializes the Board to NONE
+	   Board();
 
-// stores and manipulates the board and state of life game
-class Board {
-private:
-	// definition of constants that will not change
-	static const int activeRows = 18;
-	static const int activeCols = 50;
-	static const char ESC = 27;
-	
-	// definition of constants that might change
-	static int totalRows = activeRows + 2;
-	static int totalCols = activeCols + 2;
-	static int r;
-	static int c;
-	static int numberOfOrganisms;
+	   // Organism is set to a specific place on the board
+	   void setBoard(int r, int c, Organism value);
 
-	// how each of the constants is displayed on the board 
-	static const char LIVING = "*";
-	static const char NONE = " ";
-	Organism _board[totalRows][totalCols];
-  
-// Constructor  (same name as class, no return type, no need to specify constructor
-public:
-	Board();
+	   // The state of the board
+	   int livingNeighbors(int r, int c);
 
-// Initializing the board
-public:
-	void printBoard();
+	   // Prints the Game Of Life Board
+	   void printBoard();
 
- // Updates the Game Of Life board
- public:
-        void updateBoard();
+	   // Updates the Game Of Life Board
+	   void updateBoard();
+
+	   // Initializing the board
+	   static const int activeRows = 18;
+	   static const int activeCols = 50;
+
+	private:
+	   static const int totalRows = activeRows + 2;
+	   static const int totalCols = activeCols + 2;
+	   Organism _board[totalRows][totalCols];
 
 };
+
 
 
 #endif // GAMEOFLIFE_H_

@@ -1,20 +1,19 @@
-# Makefile for project 1 - GameOfLife
+# Use C++ 2011.  Compile for debugging (-g) with warnings.
+CXXFLAGS = -std=c++11 -g -Wall -Wextra
 
-# Builds and tests GameOfLife program.
-#
 
-# GameOfLife uses C++ 2011.  Compile for debugging (-g) with warnings.
-# Google Test needs -pthread.
-CXXFLAGS=-std=c++11 -g -Wall -Wextra -pthread
+# This rule makes the binary program from .o files.
+# (.o files are made from .cc files using a rule further down.)
+# The command uses some special variables:
+#   $@  -- the name of the target
+#   $^  -- the names of all dependencies (the .o files listed after ":")
 
-# Instructor's note: First target is the default; use it to build everything.
-all:	GameOfLife \
-	GameOfLife_test
+GameOfLife:	GameOfLife_main.o
+	g++ -o $@ $^
 
-# Main program for users to use.
-GameOfLife :	GameOfLife_main.o GameOfLife.o
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -o $@ $^
+# These rules just give additional dependencies.
+# They don't have a command, because there are default commands to
+# compile .cc to .o.  (They use the flag variables defined above.)
 
-# Program to run tests and report results.
-GameOfLife_test:	GameOfLife_test.o GameOfLife.o
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -o $@ $^
+GameOfLife_main.o:		GameOfLife.h
+

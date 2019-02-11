@@ -3,92 +3,54 @@
 // CPS222 Project 1
 
 #include <iostream>
-using std::cin;
+#include "GameOfLife.cc"
+
+
 using std::cout;
 using std::endl;
+using namespace std;
 
-#include "GameOfLife.h"
-#include <vector>
 int main()
 {
-     int numberOfOrganisms;
-     int row;
-     int col;
-     int gen;
-     static const int activeRows = 18;
-     static const int activeCols = 50;
-     static const int totalRows = activeRows + 2;
-     static const int totalCols = activeCols + 2;
-     const char LIVING = '*';
-     const char NONE = ' ';
-     int x;
-     int y;
-     int _board[totalRows][totalCols];
-     static const char ESC = 27;
-
-
-     cout << "How many organisms initially? ";
-     cin >> numberOfOrganisms;
-
-     while (cin.get() != '\n')
-     {   // intentionally empty loop body
-     }
-
-     cout << "Locations? ";
-
-/*     for (int x = 0; x < totalRows; x++)
-     {
-        for (int y = 0; y < totalCols; y++)
-        {
-          _board[x][y] == 0;
-        }
-
-      cout << endl;
-     }
-*/
-      cin >> _board[x][y];
-
-      while (cin.get() != '\n')
-      {   // intentionally empty loop body
-      }
-
-      cout << "Generations? ";
-      cin >> gen;
-
-      while (cin.get() != '\n')
-      {   // intentionally empty loop body
-      }
-
-      cout << ESC << "[H" << "Generation " << gen << ":" << endl;
-      cout << ESC << "[H" << ESC << "[J" << "Initial:" << endl;
-
-      cout << "+--------------------------------------------------+" << endl;
-
-      for (int i = 0; i < activeRows; i++)
-      {
-        cout << "|";
-          for (int j = 0; j < activeCols; j++)
-          {
-            cout << " ";
+    // The professor's code
+    static const char ESC = 27;
+    // Creates an object of class Board
+    Board board;
+    // Variables used for user input
+    int r, c, numberOfOrganisms, gen;
+    // Asks user to input number of organisms
+    cout << "How many organisms initialliy? ";
+    cin >> numberOfOrganisms;
+    // Asks user for each organism location
+    cout << "Locations? ";
+    for(int x = 0; x < numberOfOrganisms; x++)
+    {
+	cin >> r >> c;
+	board.setBoard(r, c, Board::LIVING);
+    }
+    // Asks user for amount of generations
+    cout << "Generations? ";
+    cin >> gen;
+    // The professor's code
+    while (cin.get() != '\n') { }
+    // Displays the board for each generation
+    for (int x = 0; x < gen + 1; x++)
+    {
+	// Prints the initial board
+	if (x == 0)
+	{
+	    cout << ESC << "[H" << ESC << "[J" << "Initial:" << endl;
+            board.printBoard();
+            cout << ESC << "[23;1H" << ESC << "[K" << "Press RETURN to continue";
+            while (cin.get() != '\n') { } // intentionally empty loop body
+         }
+	 // Prints every generation
+	 else
+	 {
+	      cout << ESC << "[H" << "Generation " << x << ":" << endl;
+              board.updateBoard();
+              cout << ESC << "[23;1H" << ESC << "[K" << "Press RETURN to continue";
+              while (cin.get() != '\n') { } // intentionally empty loop body 
           }
-        cout << "|";
-        cout << endl;
-       }
-
-      cout << "+--------------------------------------------------+" << endl;
-
-      cout << ESC << "[23;1H" << ESC << "[K" << "Press RETURN to continue";
-
-      while (cin.get() != '\n')
-      {   // intentionally empty loop body
       }
-
-      //Board();
-
-      //printBoard(_board);
-
-      //updateBoard(_board);
-
-};
-
-
+ }
