@@ -1,5 +1,7 @@
 // Author: Jenny Kim and FeiFei Hagan
 // We got help from and worked with Januel and his team
+//RT: good notte, thanks;  a little more details would be helpful.
+//    Also, it's spelled Jahnuel.
 
 #include <iostream>
 #include <cstdlib>
@@ -144,11 +146,13 @@ int Board::livingNeighbors(int r, int c)
  */
 void Board::updateBoard() {
     // Generates the living organisms on the board
-    for (int r = 1; r < activeRows; r++)
+    for (int r = 1; r <= activeRows; r++)
     {
-        for (int c = 1; c < activeCols; c++)
+        //RT: both loops stopped 1 short of the end,
+        //    so bottom row and right column never got updated.
+        for (int c = 1; c <= activeCols; c++)
         {
-            
+
             /* During each cycle of play, an organism is born into an empty location which has exactly
              three neighboring locations containing organism */
             if (_board[r][c] == NONE && livingNeighbors(r, c) == 3)
