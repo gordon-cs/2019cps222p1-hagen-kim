@@ -11,6 +11,8 @@ using std::endl;
 
 using namespace std;
 
+//RT: nice clean main() function, which indicates good class design
+
 int main()
 {
     // The professor's code
@@ -55,6 +57,3 @@ int main()
         }
     }
 }
-
-
-
